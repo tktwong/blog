@@ -16,7 +16,7 @@ helm install hadoop pfisterer-hadoop/hadoop
 kubectl port-forward svc/hadoop-hadoop-hdfs-nn 9870
 
 curl -i -X PUT "http://localhost:9870/webhdfs/v1/user/foo/bar?op=MKDIRS&user.name=root"
-curl -i -X GET "http://localhost:9870/webhdfs/v1/user/foo?op=LISTSTATUS" | jq
+curl -i -X GET "http://localhost:9870/webhdfs/v1/user/foo?op=LISTSTATUS"
 
 curl -i -X PUT "http://localhost:9870/webhdfs/v1/test.log?op=CREATE"
 curl -i -X POST "http://localhost:9870/webhdfs/v1/test.log?op=APPEND"
